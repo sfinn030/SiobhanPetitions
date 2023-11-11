@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Petitions Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+</head>
+<body>
+<div class="container">
+    <H1>Discover petitions to sign</H1>
+    <div class="row">
+        <table class="table table-responsive table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Petition Name</th>
+                <th>Petition Content</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${petitions.empty}">
+                <td colspan="2"> No Petitions Available </td>
+            </tr>
+            <tr th:each="petition : ${petitions}">
+                <td><span th:text="${petition.Name}"> Title </span></td>
+                <td><span th:text="${petition.Content}"> Title </span></td>
+                <td> <a th:href="@{/{id}(id=${petition.id})}"> open </a></td>
+
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

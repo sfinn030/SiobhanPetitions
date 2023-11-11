@@ -1,0 +1,38 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>t</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<form action="#" th:action="@{/savepetition}" th:object="${petition}" method="post">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div class="container">
+        <h3>Create Petition</h3>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" th:field="*{name}"  class="form-control" id="exampleFormControlInput1" placeholder="name of petition">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Petition Content</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" th:field="*{content}" ></textarea>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+
+</form>
+</body>
+</html>
