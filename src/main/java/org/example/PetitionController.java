@@ -51,7 +51,14 @@ public class PetitionController {
         //   return "greeting";
         return "petitionList";
     }
-
+    @PostMapping(value ="/sign")
+    //public String petitionSubmit(@ModelAttribute Petition petition, Model model) {
+    public String petitionSign(@ModelAttribute  Petition petition, Model model) {
+        petitionStorage.save(petition);
+        model.addAttribute("petitions", petitionStorage.getAll());
+        //   return "greeting";
+        return "petitionList";
+    }
 
 
     private Petition createNewPetition(String name) {

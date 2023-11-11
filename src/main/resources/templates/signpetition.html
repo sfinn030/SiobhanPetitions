@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/savepetition}" th:object="${petition}" method="post">
+<form action="#" th:action="@{/sign}" th:object="${petition}" method="post">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -36,13 +36,13 @@
                 <div class="col-6">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email"th:field="*{signemail}"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Name</label>
-                    <input type="text"  class="form-control" id="exampleInputPassword1" placeholder="Name">
+                    <input type="text"th:field="*{signName}"  class="form-control" id="exampleInputPassword1" placeholder="Name">
                 </div>
 
                 <button type="submit" class="btn btn-danger">Sign</button>
