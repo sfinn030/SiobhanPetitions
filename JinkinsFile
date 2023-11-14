@@ -14,6 +14,7 @@ pipeline {
                 sh 'mvn compiler:compile'
             }
         }
+
         stage ('Deploy') {
             steps {
                 sh 'docker build -f Dockerfile -t myapp
