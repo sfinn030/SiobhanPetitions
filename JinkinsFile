@@ -14,9 +14,9 @@ pipeline {
                 sh 'mvn compiler:compile'
             }
         }
-        stage ('Exec') {
+        stage ('Deploy') {
             steps {
-                sh 'mvn exec:java'
+                sh 'docker build -f Dockerfile -t myapp
             }
         }
     }
