@@ -24,7 +24,7 @@ stage ('package') {
 
         stage ('Deploy') {
             steps {
-                sh 'docker build -f Dockerfile -t myapps . '
+                sh 'docker build -f Dockerfile -t myapp . '
             }
         }
     }
