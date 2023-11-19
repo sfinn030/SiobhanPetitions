@@ -21,6 +21,13 @@ stage ('package') {
 
             }
         }
+        stage ('Archive')
+        {
+        steps {
+                         archiveArtifacts allowEmptyArchive: true,
+                         artifacts: '**/demo*.war'
+                     }
+        }
 
         stage ('Deploy') {
             steps {
