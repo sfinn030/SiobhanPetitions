@@ -11,7 +11,8 @@
 
 <body>
 <div class="container">
-    <button onclick="/addPetition" class="btn btn-danger"> Create </button>
+    <a href="/addPetition" class="btn btn-danger">Create</a>
+
 
     <H1>Discover petitions to sign</H1>
     <div class="row">
@@ -30,7 +31,7 @@
             <tr th:each="petition : ${petitions}">
                 <td><span th:text="${petition.Name}"> Title </span></td>
                 <td><span th:text="${petition.Content}"> Title </span></td>
-                <td> <a th:href="@{/{id}(id=${petition.id})}"> open </a></td>
+                <td> <a th:href="@{/{id}(id=${petition.id})}"> Sign </a></td>
 
 
 

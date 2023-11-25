@@ -30,7 +30,11 @@ stage ('package') {
         }
 
         stage ('Deploy') {
+        input{
+        message "Do you approve this deployment?"
+        }
             steps {
+
                 sh 'docker build -f Dockerfile -t myapp . '
                 sh 'docker rm -f "myappcontainer"  || true'
                 sh 'docker run --name "myappcontainer" -p 8082:8081 --detach myapp:latest' }
